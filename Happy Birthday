@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Mariyam ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* LOCK SCREEN */
+#lockScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+#lockScreen input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+}
+
+#lockScreen button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: #ff4b7d;
+  font-weight: bold;
+}
+
+/* slides */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+/* pink theme */
+.slide:nth-of-type(1) { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
+.slide:nth-of-type(2) { background: linear-gradient(135deg, #ff7eb3, #ff758c); }
+.slide:nth-of-type(3) { background: linear-gradient(135deg, #ff6a88, #ff99ac); }
+.slide:nth-of-type(4) { background: linear-gradient(135deg, #ff8fa3, #ff758c); }
+
+.active {
+  display: flex;
+}
+
+/* heading */
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+}
+
+/* glowing name */
+.name {
+  text-shadow: 0 0 15px #fff, 0 0 40px #ff4b7d;
+}
+
+/* message box */
+p {
+  max-width: 800px;
+  line-height: 1.6;
+  white-space: pre-line;
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* buttons */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #ff4b7d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* floating hearts */
+.float {
+  position: fixed;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* heart burst */
+.burst {
+  position: fixed;
+  font-size: 18px;
+  pointer-events: none;
+  animation: burst 1s forwards;
+}
+
+@keyframes burst {
+  to {
+    transform: translate(70px, -90px);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD LOCK -->
+<div id="lockScreen">
+  <h2>Enter Secret Code 💖</h2>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="check()">Unlock</button>
+</div>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <h1>Happy Birthday <span class="name">Mariyam</span> 🎉</h1>
+  <p>Tap to begin 💫</p>
+  <button onclick="nextSlide()">Start</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+<p>
+First of all Happy Birthday Mariyam today is a very special day so enjoy it to the fullest its been almost 11 years since we are together till 9th standard our bond was not that strong but slowly it grew as we became friend uk ki mai kaisa tha 10 th tak women hater mujhe ladkia dekh kr bas ek khayal aata tha ki chlo isko roast krte hai i was a genuine women hater tere saath bhi i never behaved well kuch na kuch bolta rehta tha tujhe jisse tujhe bura feel hoo mai itna dumb tha uss time i didn’t know anything ki tujhe kaisa lagta hoga selfish tha mai abb jab tune mujhe btaya ki tujhe kaisa feel hota tha depression and all mujhe itna regret hota hai tu bss dosti dhundhri thi aur mai apni hie duniya mae tha mujhe tu psnd bhi nhi thi utni mai sochta tha kyu aajati hai yeh baat krne but jab tune mujhe 10 th mae birthday card diya tha i realised someone cared for me meri life mae usse phele gift kae naam pr mujhe ekaum nae koi 3rd class mae kurkure ka packet diya tha 😂😂 so i can say that was my first gift that i received from a friend tune mujhe dost mana but maine nhi mana tha uss time tere iss gesture nae mujhe pura change krdia tha first time mujhe lga tha ki something really cares for me
+</p>
+<button onclick="nextSlide()">Next</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+<p>
+sorry woh card toh nhi hai abb mere pass but still jab bhi mai uske baare mae sochta hu bada acha lagta tha thankyou yaar tabse i have told u before mujhe tu achi lagne lagi u were someone i wanted to protect and keep to myself mai bauth possessive hu yaar mujhe bauth jealousy hoti hai but mai dikhata nhi hu 10 th kae baad mujhe lga tha hamari story ka the end hoo gya insta pr bhi tu zyada active nhi hoti thi 1-2 hafto baad tera msg aata tha I used to wait all day ki shayad aaj isse baat hoo jayegi phir jab teri trip gayi thi aur tu ek baat kashmir gayi thi tab meri call pr baat hui thi i was so happy at that time 11th mae mujhe bhi depression hona start hoo gya tha suddenly meri life change hoo gyi thi mujhe proposals aare thae log meremae interest show krre thae but i was never happy mujhe khushi tab hie hoti thi jab tere se baat hoti thi i still remeber the day jab mai terese milne aaya tha 21 april 2025 i literally walked for 10km just to see u
+</p>
+<button onclick="nextSlide()">Next</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+<p>
+i want to say thank u yaar u were the first person in my life who supported me without any ulterior motive tu mujhe aaram se shod kr ja sakti thi but still u did tere samne i never lied i said what i felt i couldn’t lie in front of u u were always my family u gave me emotional support when i need it the most the first time i tried to to do self harm tune mujhe bada sunaya tha aur promise kraya tha ki marna nhi ha saath mae ghumna hai pura world that one line ki saath mae ghumna hai ki wajha se i am alive today i had thought of giving up many times but the thing that made me stop was u so thank u yaar teri wajha se mai aaj zinda hu tu meri liye sabse zyada matter krti hai i don’t expect anything in return so dont be scared tu meri life mae special thi aur rahegi Happy Birthday my love ❤️
+</p>
+</div>
+
+<script>
+// PASSWORD SET HERE
+const correctPassword = "maryani";
+
+function check() {
+  let input = document.getElementById("pass").value;
+  if (input === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+  } else {
+    alert("Wrong password 💔");
+  }
+}
+
+// slides
+let current = 0;
+let slides = document.querySelectorAll(".slide");
+
+function nextSlide() {
+  slides[current].classList.remove("active");
+  current++;
+  if (current < slides.length) {
+    slides[current].classList.add("active");
+  }
+}
+
+// floating hearts
+setInterval(() => {
+  let el = document.createElement("div");
+  el.className = "float";
+  el.innerHTML = "❤️";
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.animationDuration = (4 + Math.random()*4) + "s";
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 8000);
+}, 400);
+
+// heart burst
+document.addEventListener("click", function(e) {
+  for (let i = 0; i < 6; i++) {
+    let h = document.createElement("div");
+    h.className = "burst";
+    h.innerHTML = "❤️";
+    h.style.left = e.clientX + "px";
+    h.style.top = e.clientY + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 1000);
+  }
+});
+</script>
+
+</body>
+</html>
