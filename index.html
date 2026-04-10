@@ -33,20 +33,16 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
   text-align: center;
-  opacity: 0;
-  transform: scale(1.1);
-  transition: 1s;
 }
 
 .active {
-  opacity: 1;
-  transform: scale(1);
+  display: flex;
 }
 
 /* COLORS */
@@ -58,22 +54,25 @@ body {
 /* TEXT */
 h1 {font-family:'Great Vibes'; font-size:50px;}
 .name {text-shadow:0 0 20px white,0 0 60px #ff4b7d;}
+
 p {
   max-width:800px;
   background:rgba(255,255,255,0.2);
   padding:20px;
   border-radius:20px;
+  line-height:1.7;
 }
 
-/* BUTTON */
+/* BUTTONS */
 button {
-  margin-top:20px;
-  padding:12px 30px;
+  margin:10px;
+  padding:12px 25px;
   border:none;
-  border-radius:30px;
+  border-radius:25px;
   background:white;
   color:#ff4b7d;
   font-weight:bold;
+  cursor:pointer;
 }
 
 /* HEARTS */
@@ -91,24 +90,55 @@ button {
 
 <body>
 
+<!-- MUSIC -->
 <audio id="bgMusic" loop>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 </audio>
 
+<!-- LOCK -->
 <div id="lockScreen">
   <h2>Enter Secret Code 💖</h2>
   <input type="password" id="pass">
   <button onclick="check()">Unlock</button>
 </div>
 
+<!-- SLIDE 1 -->
 <div class="slide active">
-  <h1>Happy Birthday <span class="name">Mariyam</span></h1>
+  <h1>Happy Birthday <span class="name">Mariyam</span> 🎉</h1>
   <button onclick="start()">Start</button>
 </div>
 
-<div class="slide"><p id="t1"></p></div>
-<div class="slide"><p id="t2"></p></div>
-<div class="slide"><p id="t3"></p></div>
+<!-- SLIDE 2 -->
+<div class="slide">
+  <p>
+First of all Happy Birthday Mariyam today is a very special day so enjoy it to the fullest its been almost 11 years since we are together till 9th standard our bond was not that strong but slowly it grew...
+  </p>
+  <div>
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <p>
+sorry woh card toh nhi hai abb mere pass but still jab bhi mai uske baare mae sochta hu bada acha lagta tha thankyou yaar...
+  </p>
+  <div>
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <p>
+i want to say thank u yaar u were the first person in my life who supported me... Happy Birthday my love ❤️
+  </p>
+  <div>
+    <button onclick="prevSlide()">Previous</button>
+  </div>
+</div>
 
 <script>
 const correctPassword="maryani";
@@ -116,48 +146,36 @@ const correctPassword="maryani";
 function check(){
   if(pass.value===correctPassword){
     lockScreen.style.display="none";
-  } else alert("Wrong password");
+  } else {
+    alert("Wrong password 💔");
+  }
 }
 
 let slides=document.querySelectorAll(".slide");
 let current=0;
 
-function show(i){
+function showSlide(i){
   slides.forEach(s=>s.classList.remove("active"));
   slides[i].classList.add("active");
 }
 
-function type(id,text,speed,callback){
-  let i=0;
-  function typing(){
-    if(i<text.length){
-      document.getElementById(id).innerHTML+=text.charAt(i);
-      i++;
-      setTimeout(typing,speed);
-    } else if(callback) callback();
-  }
-  typing();
-}
-
 function start(){
-  bgMusic.play();
-  nextSlide();
+  document.getElementById("bgMusic").play();
+  current=1;
+  showSlide(current);
 }
 
 function nextSlide(){
-  current++;
-  show(current);
-
-  if(current===1){
-    type("t1","First of all Happy Birthday Mariyam today is a very special day...",20,()=>setTimeout(nextSlide,2000));
+  if(current < slides.length-1){
+    current++;
+    showSlide(current);
   }
+}
 
-  else if(current===2){
-    type("t2","sorry woh card toh nhi hai abb mere pass but still...",20,()=>setTimeout(nextSlide,2000));
-  }
-
-  else if(current===3){
-    type("t3","i want to say thank u yaar... Happy Birthday my love ❤️",20);
+function prevSlide(){
+  if(current > 0){
+    current--;
+    showSlide(current);
   }
 }
 
