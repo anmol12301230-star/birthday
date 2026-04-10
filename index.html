@@ -63,7 +63,7 @@ p {
   line-height:1.7;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button {
   margin:10px;
   padding:12px 25px;
@@ -91,7 +91,7 @@ button {
 <body>
 
 <!-- MUSIC -->
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto">
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 </audio>
 
@@ -105,14 +105,12 @@ button {
 <!-- SLIDE 1 -->
 <div class="slide active">
   <h1>Happy Birthday <span class="name">Mariyam</span> 🎉</h1>
-  <button onclick="start()">Start</button>
+  <button onclick="startStory()">Start</button>
 </div>
 
 <!-- SLIDE 2 -->
 <div class="slide">
-  <p>
-First of all Happy Birthday Mariyam today is a very special day so enjoy it to the fullest its been almost 11 years since we are together till 9th standard our bond was not that strong but slowly it grew...
-  </p>
+  <p>First of all Happy Birthday Mariyam today is a very special day...</p>
   <div>
     <button onclick="prevSlide()">Previous</button>
     <button onclick="nextSlide()">Next</button>
@@ -121,9 +119,7 @@ First of all Happy Birthday Mariyam today is a very special day so enjoy it to t
 
 <!-- SLIDE 3 -->
 <div class="slide">
-  <p>
-sorry woh card toh nhi hai abb mere pass but still jab bhi mai uske baare mae sochta hu bada acha lagta tha thankyou yaar...
-  </p>
+  <p>sorry woh card toh nhi hai abb mere pass but still...</p>
   <div>
     <button onclick="prevSlide()">Previous</button>
     <button onclick="nextSlide()">Next</button>
@@ -132,41 +128,44 @@ sorry woh card toh nhi hai abb mere pass but still jab bhi mai uske baare mae so
 
 <!-- SLIDE 4 -->
 <div class="slide">
-  <p>
-i want to say thank u yaar u were the first person in my life who supported me... Happy Birthday my love ❤️
-  </p>
+  <p>i want to say thank u yaar... Happy Birthday my love ❤️</p>
   <div>
     <button onclick="prevSlide()">Previous</button>
   </div>
 </div>
 
 <script>
-const correctPassword="maryani";
+const correctPassword = "maryani";
 
+// unlock
 function check(){
-  if(pass.value===correctPassword){
-    lockScreen.style.display="none";
+  if(document.getElementById("pass").value === correctPassword){
+    document.getElementById("lockScreen").style.display = "none";
   } else {
     alert("Wrong password 💔");
   }
 }
 
-let slides=document.querySelectorAll(".slide");
-let current=0;
+// slides
+let slides = document.querySelectorAll(".slide");
+let current = 0;
 
-function showSlide(i){
-  slides.forEach(s=>s.classList.remove("active"));
-  slides[i].classList.add("active");
+function showSlide(index){
+  slides.forEach(s => s.classList.remove("active"));
+  slides[index].classList.add("active");
 }
 
-function start(){
-  document.getElementById("bgMusic").play();
-  current=1;
+// START BUTTON FIXED
+function startStory(){
+  current = 1;
   showSlide(current);
+
+  let music = document.getElementById("bgMusic");
+  music.play().catch(() => {}); // prevents crash if blocked
 }
 
 function nextSlide(){
-  if(current < slides.length-1){
+  if(current < slides.length - 1){
     current++;
     showSlide(current);
   }
@@ -179,7 +178,7 @@ function prevSlide(){
   }
 }
 
-/* hearts */
+// hearts
 setInterval(()=>{
   let el=document.createElement("div");
   el.className="float";
